@@ -204,6 +204,83 @@ img {
   padding: 1rem 0;
 }
 
+/* CONTACT SECTION */
+.contact-section {
+  background: #ffffff;
+  padding: 3rem 0;
+  text-align: center;
+}
+.contact-section h2 {
+  color: #3b82f6;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-form label {
+  font-weight: 500;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+}
+.contact-form button {
+  align-self: flex-start;
+}
+
+/* CHANNELS SECTION */
+.channels-section {
+  background: #f3f4f6;
+  padding: 3rem 0;
+  text-align: center;
+}
+.channels-section h2 {
+  font-size: 1.75rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.channel-card {
+  background: #fff;
+  border-radius: 6px;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.channel-card img {
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+.channel-card h3 {
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+.channel-card p {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+.channel-card a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
