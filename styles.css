@@ -58,7 +58,7 @@ img {
 
 /* HERO SECTION */
 .hero {
-  background: linear-gradient(to right, var(--primary), #E53935); /* Red gradient */
+  background: linear-gradient(to right, var(--secondary), #757575); /* Gray gradient */
   color: var(--text-light);
   text-align: center;
   padding: 4rem 0 5rem;
@@ -95,7 +95,7 @@ img {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
-  background: var(--secondary);
+  background: var(--primary); /* Red buttons for contrast */
   color: var(--text-light);
   text-decoration: none;
   font-weight: bold;
@@ -103,7 +103,7 @@ img {
   transition: transform 0.3s, background 0.3s;
 }
 .btn-scale:hover {
-  background: #666666; /* Darker gray */
+  background: #E53935; /* Slightly darker red */
   transform: scale(1.05);
 }
 
@@ -248,19 +248,6 @@ img {
   color: #CCCCCC;
 }
 
-/* MEDIA QUERIES */
-@media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    padding: 1rem 0;
-  }
-  .nav a {
-    margin: 0.5rem 0;
-  }
-  .hero h2 {
-    font-size: 1.8rem;
-  }
-}
 /* CHANNELS SECTION */
 .channels-section {
   background: var(--accent);
@@ -310,4 +297,18 @@ img {
 }
 .channel-card iframe {
   margin: 1rem 0;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  .nav a {
+    margin: 0.5rem 0;
+  }
+  .hero h2 {
+    font-size: 1.8rem;
+  }
 }
