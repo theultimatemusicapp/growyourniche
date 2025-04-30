@@ -233,7 +233,7 @@
         <!-- Testimonial 2 -->
         <div class="testimonial-card bg-gray-50 p-8 rounded-lg shadow-md">
           <div class="flex items-center mb-4"><div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-4">TV</div><div><h4 class="font-bold text-secondary">TravelVlogJane</h4><div class="flex text-accent"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
-          <p class="text-gray-600чахл italic">"Affordable and straight to the point—worth every cent. My CTR improved from 3% to 8% after implementing the thumbnail strategies we discussed."</p>
+          <p class="text-gray-600 italic">"Affordable and straight to the point—worth every cent. My CTR improved from 3% to 8% after implementing the thumbnail strategies we discussed."</p>
         </div>
         <!-- Testimonial 3 -->
         <div class="testimonial-card bg-gray-50 p-8 rounded-lg shadow-md md:col-span-2">
@@ -371,135 +371,149 @@
   </footer>
 
   <!-- ───────────────────── JS ───────────────────── -->
-  <script src="https://cdn.jsdelivr.net/npm/brain.js@2.0.0-beta.22/dist/brain-browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brain.js@2.0.0-beta.22/dist/brain-browser.min.js" defer></script>
   <script>
-    // Mobile menu toggle
-    const mobileMenuButton = document.getElementById("mobile-menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
-    mobileMenuButton.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
-
-    // FAQ accordion
-    function toggleFAQ(idx) {
-      const content = document.getElementById(`faq-content-${idx}`);
-      const icon = document.getElementById(`faq-icon-${idx}`);
-      content.classList.toggle("hidden");
-      icon.classList.toggle("transform");
-      icon.classList.toggle("rotate-180");
-    }
-
-    // Formspree AJAX + modal
-    const form = document.getElementById("booking-form");
-    const successModal = document.getElementById("success-modal");
-    async function sendFormSpree(data) {
-      return fetch("https://formspree.io/f/mnnnoogg", {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-    }
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      try {
-        const res = await sendFormSpree(data);
-        if (res.ok) {
-          successModal.classList.remove("hidden");
-          form.reset();
-        } else {
-          alert("Oops — something went wrong. Please email me instead!");
-        }
-      } catch (_) {
-        alert("Network error — please try again later.");
+    // Ensure Brain.js is loaded before running chatbot code
+    document.addEventListener("DOMContentLoaded", () => {
+      // Check if brain is defined
+      if (typeof brain === "undefined") {
+        console.error("Brain.js failed to load. Please check the CDN URL or network connection.");
+        const chatBox = document.getElementById("chat-box");
+        const errorMessage = document.createElement("div");
+        errorMessage.className = "chat-message bot-message bg-red-200 text-red-700 p-3 rounded-lg mb-2";
+        errorMessage.textContent = "Sorry, I'm having trouble loading. Please try refreshing the page or contact support.";
+        chatBox.appendChild(errorMessage);
+        return;
       }
-    });
-    function closeModal() {
-      successModal.classList.add("hidden");
-    }
 
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach((a) => {
-      a.addEventListener("click", (e) => {
-        const id = a.getAttribute("href");
-        if (id === "#") return;
-        const target = document.querySelector(id);
-        if (!target) return;
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+
+      // FAQ accordion
+      function toggleFAQ(idx) {
+        const content = document.getElementById(`faq-content-${idx}`);
+        const icon = document.getElementById(`faq-icon-${idx}`);
+        content.classList.toggle("hidden");
+        icon.classList.toggle("transform");
+        icon.classList.toggle("rotate-180");
+      }
+
+      // Formspree AJAX + modal
+      const form = document.getElementById("booking-form");
+      const successModal = document.getElementById("success-modal");
+      async function sendFormSpree(data) {
+        return fetch("https://formspree.io/f/mnnnoogg", {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" },
+        });
+      }
+      form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
-        if (!mobileMenu.classList.contains("hidden")) mobileMenu.classList.add("hidden");
+        const data = new FormData(form);
+        try {
+          const res = await sendFormSpree(data);
+          if (res.ok) {
+            successModal.classList.remove("hidden");
+            form.reset();
+          } else {
+            alert("Oops — something went wrong. Please email me instead!");
+          }
+        } catch (_) {
+          alert("Network error — please try again later.");
+        }
       });
-    });
-
-    // Chatbot functionality
-    const chatToggle = document.getElementById("chat-toggle");
-    const chatModal = document.getElementById("chat-modal");
-    const chatClose = document.getElementById("chat-close");
-    const chatSend = document.getElementById("chat-send");
-    const chatInput = document.getElementById("chat-input");
-    const chatBox = document.getElementById("chat-box");
-
-    // Toggle chat modal
-    chatToggle.addEventListener("click", () => chatModal.classList.remove("hidden"));
-    chatClose.addEventListener("click", () => chatModal.classList.add("hidden"));
-
-    // Initialize Brain.js neural network
-    const net = new brain.recurrent.LSTM();
-
-    // Training data tailored to your services and FAQs
-    const trainingData = [
-      { input: "hi", output: "Hello! I'm MentorBot. Ask me about YouTube growth services or how to book an audit!" },
-      { input: "hello", output: "Hi there! Want to grow your YouTube channel? I can help with audits, thumbnails, and more!" },
-      { input: "what services do you offer", output: "I offer channel audits, title & thumbnail optimization, and tailored marketing plans to boost your YouTube growth. Check out the services section or book an audit at #contact!" },
-      { input: "what is a channel audit", output: "A channel audit reviews your layout, video structure, analytics, and niche clarity to provide specific feedback for growth. Book one at #contact for $50 AUD!" },
-      { input: "how much is it", output: "My services are $50 AUD (€30 EUR) per hour, no upsells. Ready to start? Book a session at #contact!" },
-      { input: "how long is the session", output: "Each session is 1 hour, packed with actionable advice for your channel. Book now at #contact!" },
-      { input: "do you help beginners", output: "Absolutely! I help new creators with niche selection, branding, and avoiding common mistakes. Book a session at #contact to get started!" },
-      { input: "how do i book", output: "Easy! Fill out the form at #contact with your name, email, channel URL, and goals. You'll get a confirmation email with next steps!" },
-      { input: "what do i need to prepare", output: "Just bring your channel link and goals! We’ll identify key areas to focus on during the session. Book at #contact!" },
-      { input: "ongoing support", output: "Yes, I offer follow-up sessions or packages at a discount. Book your first session at #contact to discuss!" },
-      { input: "availability", output: "I’m available Monday-Friday, 9 AM-5 PM AEST, with some weekend slots. Book at #contact to pick a time!" },
-      { input: "bye", output: "See you later! Ready to grow your channel? Book an audit at #contact anytime!" }
-    ];
-
-    // Train the neural network
-    net.train(trainingData, {
-      iterations: 1000,
-      errorThresh: 0.011,
-      log: false
-    });
-
-    // Send message function
-    function sendMessage() {
-      const input = chatInput.value.trim().toLowerCase();
-      if (!input) return;
-
-      // Display user message
-      const userMessage = document.createElement("div");
-      userMessage.className = "chat-message user-message bg-primary text-white p-3 rounded-lg mb-2 text-right";
-      userMessage.textContent = input;
-      chatBox.appendChild(userMessage);
-
-      // Get bot response
-      let botResponse = net.run(input) || "Sorry, I didn't catch that. Try asking about my services or booking an audit!";
-      // Replace #contact with clickable link
-      if (botResponse.includes("#contact")) {
-        botResponse = botResponse.replace("#contact", `<a href="#contact" class="underline hover:text-accent">the booking form</a>`);
+      function closeModal() {
+        successModal.classList.add("hidden");
       }
-      const botMessage = document.createElement("div");
-      botMessage.className = "chat-message bot-message bg-gray-200 text-gray-700 p-3 rounded-lg mb-2";
-      botMessage.innerHTML = botResponse;
-      chatBox.appendChild(botMessage);
 
-      // Clear input and scroll to bottom
-      chatInput.value = "";
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const id = a.getAttribute("href");
+          if (id === "#") return;
+          const target = document.querySelector(id);
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth" });
+          if (!mobileMenu.classList.contains("hidden")) mobileMenu.classList.add("hidden");
+        });
+      });
 
-    // Handle send button click
-    chatSend.addEventListener("click", sendMessage);
+      // Chatbot functionality
+      const chatToggle = document.getElementById("chat-toggle");
+      const chatModal = document.getElementById("chat-modal");
+      const chatClose = document.getElementById("chat-close");
+      const chatSend = document.getElementById("chat-send");
+      const chatInput = document.getElementById("chat-input");
+      const chatBox = document.getElementById("chat-box");
 
-    // Handle Enter key press
-    chatInput.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") sendMessage();
+      // Toggle chat modal
+      chatToggle.addEventListener("click", () => chatModal.classList.remove("hidden"));
+      chatClose.addEventListener("click", () => chatModal.classList.add("hidden"));
+
+      // Initialize Brain.js neural network
+      const net = new brain.recurrent.LSTM();
+
+      // Training data tailored to your services and FAQs
+      const trainingData = [
+        { input: "hi", output: "Hello! I'm MentorBot. Ask me about YouTube growth services or how to book an audit!" },
+        { input: "hello", output: "Hi there! Want to grow your YouTube channel? I can help with audits, thumbnails, and more!" },
+        { input: "what services do you offer", output: "I offer channel audits, title & thumbnail optimization, and tailored marketing plans to boost your YouTube growth. Check out the services section or book an audit at #contact!" },
+        { input: "what is a channel audit", output: "A channel audit reviews your layout, video structure, analytics, and niche clarity to provide specific feedback for growth. Book one at #contact for $50 AUD!" },
+        { input: "how much is it", output: "My services are $50 AUD (€30 EUR) per hour, no upsells. Ready to start? Book a session at #contact!" },
+        { input: "how long is the session", output: "Each session is 1 hour, packed with actionable advice for your channel. Book now at #contact!" },
+        { input: "do you help beginners", output: "Absolutely! I help new creators with niche selection, branding, and avoiding common mistakes. Book a session at #contact to get started!" },
+        { input: "how do i book", output: "Easy! Fill out the form at #contact with your name, email, channel URL, and goals. You'll get a confirmation email with next steps!" },
+        { input: "what do i need to prepare", output: "Just bring your channel link and goals! We’ll identify key areas to focus on during the session. Book at #contact!" },
+        { input: "ongoing support", output: "Yes, I offer follow-up sessions or packages at a discount. Book your first session at #contact to discuss!" },
+        { input: "availability", output: "I’m available Monday-Friday, 9 AM-5 PM AEST, with some weekend slots. Book at #contact to pick a time!" },
+        { input: "bye", output: "See you later! Ready to grow your channel? Book an audit at #contact anytime!" }
+      ];
+
+      // Train the neural network
+      net.train(trainingData, {
+        iterations: 1000,
+        errorThresh: 0.011,
+        log: false
+      });
+
+      // Send message function
+      function sendMessage() {
+        const input = chatInput.value.trim().toLowerCase();
+        if (!input) return;
+
+        // Display user message
+        const userMessage = document.createElement("div");
+        userMessage.className = "chat-message user-message bg-primary text-white p-3 rounded-lg mb-2 text-right";
+        userMessage.textContent = input;
+        chatBox.appendChild(userMessage);
+
+        // Get bot response
+        let botResponse = net.run(input) || "Sorry, I didn't catch that. Try asking about my services or booking an audit!";
+        // Replace #contact with clickable link
+        if (botResponse.includes("#contact")) {
+          botResponse = botResponse.replace("#contact", `<a href="#contact" class="underline hover:text-accent">the booking form</a>`);
+        }
+        const botMessage = document.createElement("div");
+        botMessage.className = "chat-message bot-message bg-gray-200 text-gray-700 p-3 rounded-lg mb-2";
+        botMessage.innerHTML = botResponse;
+        chatBox.appendChild(botMessage);
+
+        // Clear input and scroll to bottom
+        chatInput.value = "";
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+
+      // Handle send button click
+      chatSend.addEventListener("click", sendMessage);
+
+      // Handle Enter key press
+      chatInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendMessage();
+      });
     });
   </script>
 </body>
