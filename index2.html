@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Day Cinematics | Premium Video Production with 3-Day Turnaround</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a2e',
+                        secondary: '#16213e',
+                        accent: '#0f3460',
+                        highlight: '#e94560',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-video {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .hero-video iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw;
+            min-height: 100vh;
+            min-width: 177.77vh;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .page-transition {
+            transition: opacity 0.3s ease;
+        }
+        .page-hidden {
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+        }
+        .page-visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #e94560;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active-nav::after {
+            width: 100%;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-primary text-white fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-video text-highlight text-2xl"></i>
+                    <a href="#" class="text-xl font-bold hover:text-highlight transition" onclick="showPage('home')">Next Day Cinematics</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link" onclick="showPage('home')">Home</a>
+                    <a href="#" class="nav-link" onclick="showPage('about')">About</a>
+                    <a href="#" class="nav-link" onclick="showPage('documentaries')">Documentaries</a>
+                    <a href="#" class="nav-link" onclick="showPage('services')">Services</a>
+                    <a href="#" class="nav-link" onclick="showPage('pricing')">Pricing</a>
+                    <a href="#" class="nav-link" onclick="showPage('contact')">Contact</a>
+                </div>
+                <button class="md:hidden text-xl" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-secondary py-4">
+            <div class="container mx-auto px-4 flex flex-col space-y-4">
+                <a href="#" class="nav-link py-2" onclick="showPage('home'); toggleMobileMenu()">Home</a>
+                <a href="#" class="nav-link py-2" onclick="showPage('about'); toggleMobileMenu()">About</a>
+                <a href="#" class="nav-link py-2" onclick="showPage('documentaries'); toggleMobileMenu()">Documentaries</a>
+                <a href="#" class="nav-link py-2" onclick="showPage('services'); toggleMobileMenu()">Services</a>
+                <a href="#" class="nav-link py-2" onclick="showPage('pricing'); toggleMobileMenu()">Pricing</a>
+                <a href="#" class="nav-link py-2" onclick="showPage('contact'); toggleMobileMenu()">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Home Page) -->
+    <div id="home" class="page-transition page-visible">
+        <div class="hero-video">
+            <iframe src="https://www.youtube.com/embed/Ef3u83dqN1Y?autoplay=1&mute=1&loop=1&playlist=Ef3u83dqN1Y" frameborder="0" allowfullscreen></iframe>
+            <div class="hero-overlay">
+                <div class="text-center px-4">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Next Day Cinematics</h1>
+                    <p class="text-xl md:text-2xl mb-8 max-w-2xl">Premium video production with a guaranteed 3-day turnaround</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="bg-highlight hover:bg-opacity-90 text-white px-6 py-3 rounded-full font-semibold transition" onclick="showPage('services')">
+                            Our Services <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                        <button class="bg-white hover:bg-gray-100 text-primary px-6 py-3 rounded-full font-semibold transition" onclick="showPage('contact')">
+                            Get a Quote <i class="fas fa-envelope ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Work Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Featured Work</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Wedding 1 -->
+                    <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative pb-[56.25%] bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                                 alt="Craig & Jimena Wedding" class="absolute h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Craig & Jimena (2023 Melbourne)</h3>
+                            <p class="text-gray-600 mb-4">Capturing the intimate moments of this beautiful Melbourne wedding.</p>
+                            <button class="text-highlight font-medium hover:underline">View Project</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Wedding 2 -->
+                    <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative pb-[56.25%] bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" 
+                                 alt="Alex & Laura Wedding" class="absolute h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Alex & Laura (2021 Melbourne)</h3>
+                            <p class="text-gray-600 mb-4">A romantic wedding celebration with stunning visuals.</p>
+                            <button class="text-highlight font-medium hover:underline">View Project</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Wedding 3 -->
+                    <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative pb-[56.25%] bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1070&q=80" 
+                                 alt="Paige & Evan Wedding" class="absolute h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Paige & Evan (2024 Greece)</h3>
+                            <p class="text-gray-600 mb-4">Destination wedding in Greece with breathtaking scenery.</p>
+                            <button class="text-highlight font-medium hover:underline">View Project</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-full font-semibold transition" onclick="showPage('documentaries')">
+                        View More Work <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Why Choose Next Day Cinematics?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                        <div class="text-highlight text-4xl mb-4">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">3-Day Guarantee</h3>
+                        <p class="text-gray-600">We promise to deliver your project within three days of filming (excluding feature films).</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                        <div class="text-highlight text-4xl mb-4">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Premium Quality</h3>
+                        <p class="text-gray-600">Fast doesn't mean compromised. We maintain the highest production standards.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                        <div class="text-highlight text-4xl mb-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Melbourne Based</h3>
+                        <p class="text-gray-600">Serving Melbourne and surrounding areas with local expertise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-16 bg-primary text-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-secondary p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-highlight text-2xl mr-4">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="italic">"Next Day Cinematics delivered our wedding video in just three days, and it was absolutely stunning. They captured every special moment perfectly."</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Laura & Alex</h4>
+                                <p class="text-gray-300 text-sm">Wedding Clients</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-secondary p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-highlight text-2xl mr-4">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="italic">"The speed at which they work is incredible, but what's more impressive is the quality. Our corporate video looked like it had weeks of post-production."</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Mark Thompson</h4>
+                                <p class="text-gray-300 text-sm">CEO, Thompson Tech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-highlight text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6">Ready to Create Something Amazing?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Let's discuss your project and how we can bring your vision to life in record time.</p>
+                <button class="bg-white hover:bg-gray-100 text-highlight px-8 py-4 rounded-full font-semibold text-lg transition" onclick="showPage('contact')">
+                    Get in Touch <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page-transition page-hidden">
+        <section class="pt-32 pb-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl font-bold mb-8 text-center">About Next Day Cinematics</h1>
+                
+                <div class="max-w-4xl mx-auto mb-16">
+                    <div class="relative pb-[56.25%] bg-gray-200 rounded-lg overflow-hidden mb-8">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Our Team" class="absolute h-full w-full object-cover">
+                    </div>
+                    <p class="text-lg mb-6">
+                        At Next Day Cinematics, we deliver high-quality video production with an unmatched turnaround time. Based in Kensington, Melbourne, we specialise in capturing and creating stunning visuals for music videos, weddings, corporate interviews, advertisements, and more.
+                    </p>
+                    <p class="text-lg mb-6">
+                        Our promise? If we take on your project, we guarantee it will be filmed, edited, and delivered within three days (excluding feature films). This commitment to speed and excellence ensures your vision comes to life without compromising on quality.
+                    </p>
+                    <p class="text-lg">
+                        But we don't just stop at video production. We can also help you craft effective marketing strategies to ensure your video gets the attention it deserves. Whether you're a band needing a standout music video, a couple looking to relive your special day, or a business wanting to engage your audience, we're here to bring your story to the screen—fast.
+                    </p>
+                </div>
+                
+                <h2 class="text-3xl font-bold mb-8 text-center">Meet Carl Tomich</h2>
+                
+                <div class="flex flex-col md:flex-row items-center gap-8 max-w-4xl mx-auto mb-16">
+                    <div class="w-full md:w-1/3">
+                        <div class="rounded-full overflow-hidden aspect-square">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 alt="Carl Tomich" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <p class="text-lg mb-4">
+                            Carl Tomich's filmmaking journey began in 2011, capturing the raw energy of live music and band performances. These early experiences fueled his passion for storytelling and his talent for uncovering the emotion and humanity in real-life moments.
+                        </p>
+                        <p class="text-lg mb-4">
+                            In 2013, Carl moved to Berlin to create <em>Busking for Berlin</em>, his first feature documentary. The film follows "Neigh Kid Horse," a young street performer navigating Berlin's vibrant busking scene, as he rises to local fame. Praised for its unfiltered portrayal of life on the streets, the documentary highlighted the passion and perseverance it takes to turn art into a livelihood.
+                        </p>
+                        <p class="text-lg mb-4">
+                            Nearly a decade later, Carl returned to Berlin with <em>Busk Life (2024)</em>, a sequel that revisits "Neigh Kid Horse" and introduces a new generation of street performers. The film delves deeper into the challenges, creativity, and resilience that sustain Berlin's iconic busking culture.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-lg mb-6">
+                        In 2021, Carl took a detour from street performances to chronicle his own adventure in <em>A Sail Untold</em>. This YouTube-exclusive film documents his daring escape from Australia during the COVID-19 lockdowns by sea, facing unexpected trials on the open ocean. Equal parts thrilling and personal, the film showcased Carl's ability to turn even his own struggles into compelling stories.
+                    </p>
+                    <p class="text-lg mb-6">
+                        Now, in 2024, Carl embarks on his most ambitious project yet—a year-long exploration of the origins of martial arts around the world. Immersing himself in the culture and training of various disciplines, Carl's new documentary (title TBD) will offer a global perspective on the history and spirit of martial arts.
+                    </p>
+                    <p class="text-lg">
+                        Carl Tomich's work consistently captures the grit, creativity, and resilience of the human spirit. Whether documenting street performers, daring adventures, or cultural traditions, his films invite viewers to step into worlds they may never have encountered. Carl isn't just a filmmaker—he's a storyteller who lives the stories he tells.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Values -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Our Values</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="text-highlight text-4xl mb-4">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Creativity</h3>
+                        <p class="text-gray-600">We approach every project with fresh eyes and innovative ideas to make your content stand out.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="text-highlight text-4xl mb-4">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Efficiency</h3>
+                        <p class="text-gray-600">Our streamlined processes allow us to deliver exceptional results in record time.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="text-highlight text-4xl mb-4">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Passion</h3>
+                        <p class="text-gray-600">We love what we do, and it shows in every frame we capture and every edit we make.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="py-16 bg-highlight text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6">Want to Learn More?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Check out our documentary work or get in touch to discuss your project.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white hover:bg-gray-100 text-highlight px-6 py-3 rounded-full font-semibold transition" onclick="showPage('documentaries')">
+                        Our Documentaries <i class="fas fa-film ml-2"></i>
+                    </button>
+                    <button class="border-2 border-white hover:bg-white hover:text-highlight px-6 py-3 rounded-full font-semibold transition" onclick="showPage('contact')">
+                        Contact Us <i class="fas fa-envelope ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Documentaries Page -->
+    <div id="documentaries" class="page-transition page-hidden">
+        <section class="pt-32 pb-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl font-bold mb-12 text-center">Documentary Work</h1>
+                
+                <!-- Featured Documentary -->
+                <div class="max-w-6xl mx-auto mb-16">
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-xl">
+                        <div class="relative pb-[56.25%]">
+                            <iframe class="absolute top-0 left-0 w-full h-full" 
+                                    src="https://www.youtube.com/embed/Ef3u83dqN1Y" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen></iframe>
+                        </div>
+                        <div class="p-8">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Next Day Cinematics Showreel</h2>
+                            <p class="text-gray-300 mb-6">A collection of our best work across various projects and genres.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-highlight text-white px-3 py-1 rounded-full text-sm">Showreel</span>
+                                <span class="bg-gray-600 text-white px-3 py-1 rounded-full text-sm">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Documentary Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Busk Life -->
+                    <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative pb-[56.25%] bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                 alt="Busk Life" class="absolute h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Busk Life (2024)</h3>
+                            <p class="text-gray-600 mb-4">A sequel that revisits "Neigh Kid Horse" and introduces a new generation of street performers in Berlin.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Documentary</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Berlin</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Street Performance</span>
+                            </div>
+                            <button class="text-highlight font-medium hover:underline">Watch Trailer</button>
+                        </div>
+                    </div>
+                    
+                    <!-- A Sail Untold -->
+                    <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative pb-[56.25%] bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1226&q=80" 
+                                 alt="A Sail Untold" class="absolute h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">A Sail Untold (2021)</h3>
+                            <p class="text-gray-600 mb-4">A YouTube-exclusive film documenting a daring escape from Australia during COVID-19 lockdowns by sea.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Adventure</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Travel</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Personal Journey</span>
+                            </div>
+                            <button class="text-highlight font-medium hover:underline">Watch on YouTube</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Busking for Berlin -->
+                    <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative pb-[56.25%] bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                 alt="Busking for Berlin" class="absolute h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Busking for Berlin (2013)</h3>
+                            <p class="text-gray-600 mb-4">Carl's first feature documentary following "Neigh Kid Horse," a young street performer in Berlin.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Documentary</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Music</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Berlin</span>
+                            </div>
+                            <button class="text-highlight font-medium hover:underline">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Martial Arts Documentary -->
+                    <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative pb-[56.25%] bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1131&q=80" 
+                                 alt="Martial Arts Documentary" class="absolute h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Origins of Martial Arts (2024)</h3>
+                            <p class="text-gray-600 mb-4">Coming soon: A year-long exploration of martial arts traditions from around the world.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Documentary</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Martial Arts</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Culture</span>
+                            </div>
+                            <button class="text-highlight font-medium hover:underline">Coming Soon</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Music Documentary -->
+                    <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative pb-[56.25%] bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1113&q=80" 
+                                 alt="Music Documentary" class="absolute h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Underground Sounds (2015)</h3>
+                            <p class="text-gray-600 mb-4">An exploration of Melbourne's underground music scene and the artists who define it.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Music</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Melbourne</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Underground</span>
+                            </div>
+                            <button class="text-highlight font-medium hover:underline">View Excerpts</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Urban Exploration -->
+                    <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg">
+                        <div class="relative pb-[56.25%] bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                 alt="Urban Exploration" class="absolute h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Concrete Canvas (2017)</h3>
+                            <p class="text-gray-600 mb-4">A visual journey through street art and urban expression in cities worldwide.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Art</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Urban</span>
+                                <span class="bg-gray-200 px-2 py-1 rounded text-xs">Culture</span>
+                            </div>
+                            <button class="text-highlight font-medium hover:underline">View Gallery</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-16">
+                    <button class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-full font-semibold transition" onclick="showPage('contact')">
+                        Commission a Documentary <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="py-16 bg-highlight text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6">Have a Story to Tell?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">We specialize in bringing unique stories to life through compelling documentary filmmaking.</p>
+                <button class="bg-white hover:bg-gray-100 text-highlight px-8 py-4 rounded-full font-semibold text-lg transition" onclick="showPage('contact')">
+                    Let's Talk <i class="fas fa-comments ml-2"></i>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services" class="page-transition page-hidden">
+        <section class="pt-32 pb-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl font-bold mb-4 text-center">Our Services</h1>
+                <p class="text-xl text-center text-gray-600 mb-12 max-w-2xl mx-auto">Premium production services with a guaranteed 3-day turnaround (excluding feature films).</p>
+                
+                <!-- Video Production Services -->
+                <div class="max-w-6xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Video Production</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Wedding Videos -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                                     alt="Wedding Videos" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Wedding Videos</h3>
+                                <p class="text-gray-600 mb-4">Capture your special day with cinematic quality. We'll deliver a beautifully edited wedding film within three days.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Music Videos -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                     alt="Music Videos" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Music Videos</h3>
+                                <p class="text-gray-600 mb-4">Create a visual masterpiece for your music. From concept to final cut in three days.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Corporate Videos -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1551289106-5a2d0b827b1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                                     alt="Corporate Videos" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Corporate Videos</h3>
+                                <p class="text-gray-600 mb-4">Professional videos for your business needs - interviews, promotions, and more.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Commercials -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                     alt="Commercials" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Commercials</h3>
+                                <p class="text-gray-600 mb-4">High-impact commercials for TV, social media, or online platforms.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Documentaries -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                     alt="Documentaries" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Documentaries</h3>
+                                <p class="text-gray-600 mb-4">Tell your story with our professional documentary filmmaking services.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Coverage -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                     alt="Event Coverage" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Event Coverage</h3>
+                                <p class="text-gray-600 mb-4">Professional coverage of concerts, festivals, corporate events, and more.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Photography Services -->
+                <div class="max-w-6xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Photography</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Model Shoots -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                     alt="Model Shoots" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Model Shoots</h3>
+                                <p class="text-gray-600 mb-4">Professional model photography for portfolios, agencies, or personal projects.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Drone Photography -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1509395479091-daa8490a4c3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                     alt="Drone Photography" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Drone Photography</h3>
+                                <p class="text-gray-600 mb-4">Stunning aerial photography for real estate, events, or creative projects.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Corporate Headshots -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                     alt="Corporate Headshots" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Corporate Headshots</h3>
+                                <p class="text-gray-600 mb-4">Professional headshots for your team, website, or marketing materials.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Band Photography -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                     alt="Band Photography" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Band Photography</h3>
+                                <p class="text-gray-600 mb-4">Dynamic photos for musicians, album art, and promotional materials.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Photography -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1602143407151-7111557dbca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                     alt="Product Photography" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Product Photography</h3>
+                                <p class="text-gray-600 mb-4">High-quality images of your products for e-commerce or advertising.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Photography -->
+                        <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+                            <div class="relative pb-[56.25%] bg-gray-200">
+                                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                     alt="Event Photography" class="absolute h-full w-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-3">Event Photography</h3>
+                                <p class="text-gray-600 mb-4">Professional coverage of weddings, concerts, corporate events, and more.</p>
+                                <div class="flex items-center text-highlight font-medium">
+                                    <span>Learn More</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Services -->
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Additional Services</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Editing -->
+                        <div class="bg-gray-50 p-8 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="text-highlight text-3xl mr-4">
+                                    <i class="fas fa-cut"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">Editing Services</h3>
+                            </div>
+                            <p class="text-gray-600">Already have footage? We can edit your existing material into a polished final product with our fast turnaround.</p>
+                        </div>
+                        
+                        <!-- Color Grading -->
+                        <div class="bg-gray-50 p-8 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="text-highlight text-3xl mr-4">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">Color Grading</h3>
+                            </div>
+                            <p class="text-gray-600">Enhance your footage with professional color grading to achieve the perfect look and mood.</p>
+                        </div>
+                        
+                        <!-- Marketing -->
+                        <div class="bg-gray-50 p-8 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="text-highlight text-3xl mr-4">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">Marketing Strategy</h3>
+                            </div>
+                            <p class="text-gray-600">We can help you develop a marketing plan to ensure your content reaches the right audience.</p>
+                        </div>
+                        
+                        <!-- Motion Graphics -->
+                        <div class="bg-gray-50 p-8 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="text-highlight text-3xl mr-4">
+                                    <i class="fas fa-film"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold">Motion Graphics</h3>
+                            </div>
+                            <p class="text-gray-600">Add dynamic motion graphics and animations to your videos for extra impact.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="py-16 bg-highlight text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">View our pricing packages or get in touch for a custom quote.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white hover:bg-gray-100 text-highlight px-6 py-3 rounded-full font-semibold transition" onclick="showPage('pricing')">
+                        View Pricing <i class="fas fa-tags ml-2"></i>
+                    </button>
+                    <button class="border-2 border-white hover:bg-white hover:text-highlight px-6 py-3 rounded-full font-semibold transition" onclick="showPage('contact')">
+                        Contact Us <i class="fas fa-envelope ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pricing Page -->
+    <div id="pricing" class="page-transition page-hidden">
+        <section class="pt-32 pb-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl font-bold mb-4 text-center">Our Pricing</h1>
+                <p class="text-xl text-center text-gray-600 mb-12 max-w-2xl mx-auto">Transparent pricing for our premium production services with 3-day turnaround.</p>
+                
+                <!-- Pricing Tabs -->
+                <div class="max-w-4xl mx-auto mb-12">
+                    <div class="flex flex-wrap justify-center border-b border-gray-200 mb-8">
+                        <button id="videoTab" class="px-4 py-2 font-medium text-highlight border-b-2 border-highlight" onclick="showPricingTab('video')">
+                            Video Production
+                        </button>
+                        <button id="photoTab" class="px-4 py-2 font-medium text-gray-500 hover:text-highlight" onclick="showPricingTab('photo')">
+                            Photography
+                        </button>
+                        <button id="addonTab" class="px-4 py-2 font-medium text-gray-500 hover:text-highlight" onclick="showPricingTab('addon')">
+                            Add-ons
+                        </button>
+                    </div>
+                    
+                    <!-- Video Production Pricing -->
+                    <div id="videoPricing" class="pricing-content">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Basic Video Package -->
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                                <div class="bg-primary text-white py-4 px-6">
+                                    <h3 class="text-xl font-semibold">Basic Video</h3>
+                                    <div class="flex items-end mt-2">
+                                        <span class="text-3xl font-bold">$1,200</span>
+                                        <span class="ml-1 mb-1">/project</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <ul class="space-y-3 mb-6">
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Up to 4 hours of filming</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Basic editing</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>1 videographer</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>1 camera setup</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>3-day delivery</span>
+                                        </li>
+                                    </ul>
+                                    <button class="w-full bg-highlight hover:bg-opacity-90 text-white py-3 rounded font-semibold transition">
+                                        Select Package
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Standard Video Package -->
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-highlight transform scale-105">
+                                <div class="bg-highlight text-white py-4 px-6">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <h3 class="text-xl font-semibold">Standard Video</h3>
+                                            <div class="flex items-end mt-2">
+                                                <span class="text-3xl font-bold">$2,500</span>
+                                                <span class="ml-1 mb-1">/project</span>
+                                            </div>
+                                        </div>
+                                        <span class="bg-white text-highlight text-xs font-bold px-2 py-1 rounded-full">POPULAR</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <ul class="space-y-3 mb-6">
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Up to 8 hours of filming</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Advanced editing</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>2 videographers</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>2 camera setups</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Basic color grading</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>3-day delivery</span>
+                                        </li>
+                                    </ul>
+                                    <button class="w-full bg-highlight hover:bg-opacity-90 text-white py-3 rounded font-semibold transition">
+                                        Select Package
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Premium Video Package -->
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                                <div class="bg-primary text-white py-4 px-6">
+                                    <h3 class="text-xl font-semibold">Premium Video</h3>
+                                    <div class="flex items-end mt-2">
+                                        <span class="text-3xl font-bold">$4,000</span>
+                                        <span class="ml-1 mb-1">/project</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <ul class="space-y-3 mb-6">
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Full day filming (up to 12 hours)</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Cinematic editing</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>3 videographers</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>3 camera setups</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Professional color grading</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Basic motion graphics</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>3-day delivery</span>
+                                        </li>
+                                    </ul>
+                                    <button class="w-full bg-highlight hover:bg-opacity-90 text-white py-3 rounded font-semibold transition">
+                                        Select Package
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Photography Pricing -->
+                    <div id="photoPricing" class="pricing-content hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Basic Photo Package -->
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                                <div class="bg-primary text-white py-4 px-6">
+                                    <h3 class="text-xl font-semibold">Basic Photo</h3>
+                                    <div class="flex items-end mt-2">
+                                        <span class="text-3xl font-bold">$600</span>
+                                        <span class="ml-1 mb-1">/session</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <ul class="space-y-3 mb-6">
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Up to 2 hours of shooting</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>50+ edited photos</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Basic retouching</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>1 photographer</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>3-day delivery</span>
+                                        </li>
+                                    </ul>
+                                    <button class="w-full bg-highlight hover:bg-opacity-90 text-white py-3 rounded font-semibold transition">
+                                        Select Package
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Standard Photo Package -->
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-highlight transform scale-105">
+                                <div class="bg-highlight text-white py-4 px-6">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <h3 class="text-xl font-semibold">Standard Photo</h3>
+                                            <div class="flex items-end mt-2">
+                                                <span class="text-3xl font-bold">$1,200</span>
+                                                <span class="ml-1 mb-1">/session</span>
+                                            </div>
+                                        </div>
+                                        <span class="bg-white text-highlight text-xs font-bold px-2 py-1 rounded-full">POPULAR</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <ul class="space-y-3 mb-6">
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Up to 4 hours of shooting</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>100+ edited photos</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Professional retouching</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>1 photographer + assistant</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Multiple locations</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>3-day delivery</span>
+                                        </li>
+                                    </ul>
+                                    <button class="w-full bg-highlight hover:bg-opacity-90 text-white py-3 rounded font-semibold transition">
+                                        Select Package
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Premium Photo Package -->
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                                <div class="bg-primary text-white py-4 px-6">
+                                    <h3 class="text-xl font-semibold">Premium Photo</h3>
+                                    <div class="flex items-end mt-2">
+                                        <span class="text-3xl font-bold">$2,000</span>
+                                        <span class="ml-1 mb-1">/session</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <ul class="space-y-3 mb-6">
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Full day shooting (up to 8 hours)</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>200+ edited photos</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Advanced retouching</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>2 photographers</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Drone photography included</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>Multiple locations</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            <span>3-day delivery</span>
+                                        </li>
+                                    </ul>
+                                    <button class="w-full bg-highlight hover:bg-opacity-90 text-white py-3 rounded font-semibold transition">
+                                        Select Package
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add-ons Pricing -->
+                    <div id="addonPricing" class="pricing-content hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Additional Filming -->
+                            <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                                <h3 class="text-xl font-semibold mb-4">Additional Filming</h3>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span>Extra hour of filming</span>
+                                    <span class="font-semibold">$150/hour</span>
+                                </div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span>Additional videographer</span>
+                                    <span
+</html>
