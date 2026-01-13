@@ -1,723 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YouTube Growth Mentor | Channel Strategy & SEO</title>
-
-    <!-- Tailwind & Font-Awesome -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-    <!-- Tailwind custom palette -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#FF0000",
-              secondary: "#282828",
-              accent: "#FFD700",
-            },
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
-
-    <!-- Inter font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-        scroll-behavior: smooth;
-      }
-
-      .hero-gradient {
-        background: linear-gradient(135deg, #FF0000 0%, #282828 100%);
-      }
-
-      .testimonial-card {
-        transition: all 0.3s ease;
-      }
-      .testimonial-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .service-card {
-        transition: all 0.3s ease;
-        border-left: 4px solid transparent;
-      }
-      .service-card:hover {
-        transform: translateY(-5px);
-        border-left-color: #FF0000;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-link {
-        position: relative;
-      }
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -2px;
-        left: 0;
-        background-color: #FF0000;
-        transition: width 0.3s ease;
-      }
-      .nav-link:hover::after {
-        width: 100%;
-      }
-
-      .faq-item {
-        transition: all 0.3s ease;
-      }
-      .faq-item:hover {
-        background-color: rgba(255, 0, 0, 0.05);
-      }
-
-      .video-container {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-      }
-      .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grow Your Niche | Honest YouTube Growth Reality</title>
+  <meta name="description" content="Grow Your Niche is a brutally honest look at growing YouTube channels in 2024–2026, with real analytics, real timelines, and real trade-offs." />
+  <meta property="og:title" content="Grow Your Niche | Honest YouTube Growth Reality" />
+  <meta property="og:description" content="What actually happens when you grow YouTube channels in 2024–2026. No guru language. No false promises." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Grow Your Niche | Honest YouTube Growth Reality" />
+  <meta name="twitter:description" content="Real analytics, real income ranges, real mistakes." />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
-<body class="bg-gray-50">
-  <!-- ───────────────────── NAVIGATION ───────────────────── -->
-  <nav class="bg-white shadow-md sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <div class="flex items-center space-x-2">
-        <i class="fab fa-youtube text-primary text-3xl"></i>
-        <span class="text-xl font-bold text-secondary">YouTube Growth Mentor</span>
-      </div>
-      <div class="hidden md:flex space-x-8">
-        <a href="#services" class="nav-link text-gray-700 font-medium">Services</a>
-        <a href="#about" class="nav-link text-gray-700 font-medium">About</a>
-        <a href="#testimonials" class="nav-link text-gray-700 font-medium">Testimonials</a>
-        <a href="#faq" class="nav-link text-gray-700 font-medium">FAQ</a>
-        <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-md font-medium hover:bg-red-700 transition">Book Audit</a>
-      </div>
-      <button class="md:hidden text-gray-700" id="mobile-menu-button">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">Grow Your Niche</a>
+      <nav class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="youtube-reality.html">YouTube Reality</a>
+        <a href="analytics-seo.html">Analytics &amp; SEO</a>
+        <a href="monetisation-reality.html">Monetisation Reality</a>
+        <a href="mistakes.html">Mistakes</a>
+        <a href="gear-tools.html">Tools I Use</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Mobile menu -->
-    <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-md" id="mobile-menu">
-      <div class="flex flex-col space-y-4">
-        <a href="#services" class="text-gray-700 font-medium">Services</a>
-        <a href="#about" class="text-gray-700 font-medium">About</a>
-        <a href="#testimonials" class="text-gray-700 font-medium">Testimonials</a>
-        <a href="#faq" class="text-gray-700 font-medium">FAQ</a>
-        <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-md font-medium text-center">Book Audit</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ───────────────────── HERO ───────────────────── -->
-  <section class="hero-gradient text-white py-16 md:py-24">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-      <div class="md:w-1/2 mb-10 md:mb-0">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Helping Creators Grow <br /><span class="text-accent">One Channel at a Time</span></h1>
-        <p class="text-xl mb-8">Stuck with low views? Get personal mentoring from a creator with 4 monetised channels.</p>
-        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-md font-bold text-center hover:bg-gray-100 transition">Book Your Audit</a>
-          <a href="#video" class="border-2 border-white text-white px-6 py-3 rounded-md font-bold text-center hover:bg-white hover:text-primary transition">Watch: Who I Am</a>
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div>
+          <span class="badge">No guru language. No fake urgency.</span>
+          <h1>What actually happens when you grow YouTube channels in 2024–2026.</h1>
+          <p>
+            Grow Your Niche is my honest report from running multiple channels. I show the wins, the slow months,
+            the boring parts, and the money ranges without hype. If you want shortcuts, you won’t like this. If you want
+            reality, welcome.
+          </p>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <a class="button primary" href="resources.html">Start with the resources hub</a>
+            <a class="button ghost" href="about.html">Read the full story</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Quick snapshot</h3>
+          <ul class="feature-list">
+            <li>I run multiple channels across different niches.</li>
+            <li>I publish what didn’t work and why it failed.</li>
+            <li>I admit when luck helped.</li>
+            <li>I share real timelines, not fantasy growth charts.</li>
+          </ul>
         </div>
       </div>
-      <div class="md:w-1/2 flex justify-center">
-        <div class="relative w-full max-w-lg">
-          <div class="absolute -top-6 -left-6 w-32 h-32 bg-accent rounded-full opacity-20"></div>
-          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent rounded-full opacity-20"></div>
-          <div class="relative bg-white p-1 rounded-lg shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1074&q=80" alt="YouTube Creator" class="rounded-lg w-full h-auto" />
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">The anti-guru manifesto</h2>
+        <p class="section-subtitle">The rules I follow so this site stays trustworthy.</p>
+        <div class="grid">
+          <div class="card">
+            <p class="tag">Reality check</p>
+            <h3>No promises. Just patterns.</h3>
+            <p>I won’t sell you a guaranteed outcome because I can’t deliver one. I can show patterns, trade-offs, and what consistently hurts small channels.</p>
+          </div>
+          <div class="card">
+            <p class="tag">Transparency</p>
+            <h3>Real analytics, real screenshots.</h3>
+            <p>You’ll see actual data, the messy dips, and the slow climbs. Growth is rarely a straight line. I don’t pretend it is.</p>
+          </div>
+          <div class="card">
+            <p class="tag">Honesty</p>
+            <h3>I show the wasted months.</h3>
+            <p>Some ideas didn’t work. Some were bad. Some were fine but still failed. You’ll see those, not just the highlights.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ───────────────────── ABOUT ───────────────────── -->
-  <section id="about" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">About Me</h2>
-        <div class="w-20 h-1 bg-primary mx-auto"></div>
+    <section class="section" style="background: var(--surface-muted);">
+      <div class="container">
+        <h2 class="section-title">Start here: latest field notes</h2>
+        <p class="section-subtitle">Fresh articles built from what I’m seeing in real analytics right now.</p>
+        <div class="grid">
+          <a class="card" href="articles/why-most-youtube-channels-fail.html">
+            <p class="tag">YouTube Reality</p>
+            <h3>Why Most YouTube Channels Fail (Even If the Content Is Good)</h3>
+            <p>The brutal mix of distribution, retention, and timing that kills good videos before they have a chance.</p>
+          </a>
+          <a class="card" href="articles/how-long-to-grow-youtube-channel.html">
+            <p class="tag">YouTube Reality</p>
+            <h3>How Long It Really Takes to Grow a YouTube Channel (Real Timelines)</h3>
+            <p>What my timeline looked like across multiple channels, and why the “overnight” stories are misleading.</p>
+          </a>
+          <a class="card" href="articles/youtube-seo-2025.html">
+            <p class="tag">Analytics &amp; SEO</p>
+            <h3>How YouTube SEO Actually Works in 2025 (Not What Gurus Say)</h3>
+            <p>The boring but dependable signals that still move the needle when you’re under 50k subs.</p>
+          </a>
+          <a class="card" href="articles/how-much-youtube-pays-small-creators.html">
+            <p class="tag">Monetisation</p>
+            <h3>How Much YouTube Really Pays Small Creators</h3>
+            <p>Real ranges, what affects RPM, and why your niche matters more than your editing style.</p>
+          </a>
+          <a class="card" href="articles/everything-i-wasted-time-on.html">
+            <p class="tag">Mistakes</p>
+            <h3>Everything I Wasted Time On Growing YouTube</h3>
+            <p>Content that felt productive but didn’t move the channel. I list it so you can skip it.</p>
+          </a>
+          <a class="card" href="articles/what-i-would-do-from-zero.html">
+            <p class="tag">Mistakes</p>
+            <h3>What I’d Do If I Had to Start Again From Zero</h3>
+            <p>How I’d rebuild today with no audience, no reputation, and no appetite for hustling.</p>
+          </a>
+        </div>
       </div>
-      <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-          <div class="video-container rounded-lg shadow-lg">
-            <iframe src="https://www.youtube.com/embed/HtkthH9W_R0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">How this site is structured</h2>
+        <p class="section-subtitle">A clear path through reality, analytics, monetisation, and mistakes.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>YouTube Reality</h3>
+            <p>Timelines, expectations, and the slow parts nobody talks about.</p>
+            <a href="youtube-reality.html">Explore the reality articles →</a>
           </div>
-        </div>
-        <div class="md:w-1/2">
-          <p class="text-lg text-gray-700 mb-6">I've built and monetised four YouTube channels—covering tech reviews, travel vlogs, and faceless content. I come from a creative background, having filmed documentaries, music videos, weddings, and commercials.</p>
-          <p class="text-lg text-gray-700 mb-6">I've also managed corporate social media for a consulting firm. Now, I work full-time on my own social channels—and I'm here to help you grow yours.</p>
-          <div class="flex flex-wrap gap-4">
-            <div class="bg-gray-100 px-4 py-2 rounded-full flex items-center"><i class="fas fa-video text-primary mr-2"></i><span class="text-gray-700">4 Monetized Channels</span></div>
-            <div class="bg-gray-100 px-4 py-2 rounded-full flex items-center"><i class="fas fa-camera text-primary mr-2"></i><span class="text-gray-700">Creative Background</span></div>
-            <div class="bg-gray-100 px-4 py-2 rounded-full flex items-center"><i class="fas fa-briefcase text-primary mr-2"></i><span class="text-gray-700">Corporate Experience</span></div>
+          <div class="card">
+            <h3>Analytics &amp; SEO</h3>
+            <p>What actually moves impressions, clicks, and watch time in 2025.</p>
+            <a href="analytics-seo.html">See the analytics deep dives →</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ───────────────────── SERVICES ───────────────────── -->
-  <section id="services" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">What You'll Get</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Personalized YouTube growth strategies tailored to your channel and goals</p>
-        <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Service 1 -->
-        <div class="service-card bg-white p-8 rounded-lg shadow-md">
-          <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6"><i class="fas fa-chart-line text-primary text-2xl"></i></div>
-          <h3 class="text-xl font-bold text-secondary mb-4">Channel Audit</h3>
-          <p class="text-gray-600 mb-4">I'll review your channel layout, video structure, pacing, analytics, consistency, and niche clarity. You'll get specific, honest feedback and a clear path to improvement.</p>
-          <div class="flex flex-wrap gap-2"><span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">SEO</span><span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Analytics</span><span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Structure</span></div>
-        </div>
-        <!-- Service 2 -->
-        <div class="service-card bg-white p-8 rounded-lg shadow-md">
-          <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6"><i class="fas fa-eye text-primary text-2xl"></i></div>
-          <h3 class="text-xl font-bold text-secondary mb-4">Titles & Thumbnails</h3>
-          <p class="text-gray-600 mb-4">Your titles and thumbnails are your first impression. I'll help you rework them to be more clickable, curiosity-driven, and aligned with what works in your space.</p>
-          <div class="flex flex-wrap gap-2"><span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">CTR</span><span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Psychology</span><span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Design</span></div>
-        </div>
-        <!-- Service 3 -->
-        <div class="service-card bg-white p-8 rounded-lg shadow-md">
-          <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6"><i class="fas fa-bullseye text-primary text-2xl"></i></div>
-          <h3 class="text-xl font-bold text-secondary mb-4">Tailored Marketing Plan</h3>
-          <p class="text-gray-600 mb-4">Not a one-size-fits-all plan. We'll build a content and promotion strategy based on your goals, niche, and capacity—helping you build visibility and traction, step by step.</p>
-          <div class="flex flex-wrap gap-2"><span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Strategy</span><span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Promotion</span><span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Growth</span></div>
-        </div>
-      </div>
-      <div class="mt-16 bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto text-center">
-        <h3 class="text-2xl font-bold text-secondary mb-4">Simple, Transparent Pricing</h3>
-        <p class="text-xl text-gray-700 mb-6"><span class="font-bold text-primary">$50 AUD / €30 EUR per hour</span> — one flat rate, no upsells, no fluff.</p>
-        <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-md font-bold hover:bg-red-700 transition inline-block">Get Started Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ───────────────────── TESTIMONIALS ───────────────────── -->
-  <section id="testimonials" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">What Clients Say</h2>
-        <div class="w-20 h-1 bg-primary mx-auto"></div>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card bg-gray-50 p-8 rounded-lg shadow-md">
-          <div class="flex items-center mb-4"><div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-4">TT</div><div><h4 class="font-bold text-secondary">TechTuber123</h4><div class="flex text-accent"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
-          <p class="text-gray-600 italic">"Helped me double my views in just two months with practical tips! The channel audit was incredibly thorough and the thumbnail advice alone was worth the investment."</p>
-        </div>
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card bg-gray-50 p-8 rounded-lg shadow-md">
-          <div class="flex items-center mb-4"><div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-4">TV</div><div><h4 class="font-bold text-secondary">TravelVlogJane</h4><div class="flex text-accent"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
-          <p class="text-gray-600 italic">"Affordable and straight to the point—worth every cent. My CTR improved from 3% to 8% after implementing the thumbnail strategies we discussed."</p>
-        </div>
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card bg-gray-50 p-8 rounded-lg shadow-md md:col-span-2">
-          <div class="flex items-center mb-4"><div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-4">FC</div><div><h4 class="font-bold text-secondary">FacelessCreator</h4><div class="flex text-accent"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
-          <p class="text-gray-600 italic">"As a faceless channel, I was struggling to grow. The tailored marketing plan helped me identify underserved topics in my niche, and my subscriber count has grown 300% in 4 months. The best part was learning how to analyze my analytics properly to make data-driven decisions."</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ───────────────────── CTA ───────────────────── -->
-  <section class="py-16 bg-primary text-white text-center">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Grow Your Channel</h2>
-      <p class="text-xl mb-8 max-w-2xl mx-auto">Ready to take your YouTube channel to the next level? Book a 1-on-1 session today.</p>
-      <a href="#contact" class="bg-white text-primary px-8 py-3 rounded-md font-bold hover:bg-gray-100 transition inline-block">Book a 1-on-1 Session</a>
-    </div>
-  </section>
-
-  <!-- ───────────────────── FAQ ───────────────────── -->
-  <section id="faq" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Quick Questions</h2>
-        <div class="w-20 h-1 bg-primary mx-auto"></div>
-      </div>
-      <div class="max-w-3xl mx-auto">
-        <!-- FAQ items -->
-        <div class="faq-item bg-white p-6 rounded-lg shadow-md mb-4"><div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(1)"><h3 class="font-bold text-lg text-secondary">How long is the session?</h3><i class="fas fa-chevron-down text-primary transition-transform duration-300" id="faq-icon-1"></i></div><p class="text-gray-600 mt-3 hidden" id="faq-content-1">One hour, packed with value. We'll cover your most pressing issues and create an actionable plan for your channel's growth.</p></div>
-        <div class="faq-item bg-white p-6 rounded-lg shadow-md mb-4"><div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(2)"><h3 class="font-bold text-lg text-secondary">What do I need to prepare?</h3><i class="fas fa-chevron-down text-primary transition-transform duration-300" id="faq-icon-2"></i></div><p class="text-gray-600 mt-3 hidden" id="faq-content-2">Just your channel link and goals! It helps if you have specific questions or areas you want to focus on, but we can identify those together during our session.</p></div>
-        <div class="faq-item bg-white p-6 rounded-lg shadow-md mb-4"><div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(3)"><h3 class="font-bold text-lg text-secondary">Do you offer ongoing support?</h3><i class="fas fa-chevron-down text-primary transition-transform duration-300" id="faq-icon-3"></i></div><p class="text-gray-600 mt-3 hidden" id="faq-content-3">Yes! Many clients book follow-up sessions to review progress and refine their strategy. You can book single sessions or packages of multiple sessions at a discounted rate.</p></div>
-        <div class="faq-item bg-white p-6 rounded-lg shadow-md mb-4"><div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(4)"><h3 class="font-bold text-lg text-secondary">What if I'm just starting out?</h3><i class="fas fa-chevron-down text-primary transition-transform duration-300" id="faq-icon-4"></i></div><p class="text-gray-600 mt-3 hidden" id="faq-content-4">Perfect! Starting with the right foundation is crucial. We'll focus on niche selection, channel branding, content strategy, and avoiding common beginner mistakes.</p></div>
-        <div class="faq-item bg-white p-6 rounded-lg shadow-md"><div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(5)"><h3 class="font-bold text-lg text-secondary">What's your availability?</h3><i class="fas fa-chevron-down text-primary transition-transform duration-300" id="faq-icon-5"></i></div><p class="text-gray-600 mt-3 hidden" id="faq-content-5">I typically have sessions available Monday-Friday between 9 AM-5 PM (AEST). Weekend sessions may be available by request. Bookings are made through the calendar system after payment.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ───────────────────── CONTACT (Formspree) ───────────────────── -->
-  <section id="contact" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto bg-gray-50 rounded-lg shadow-lg overflow-hidden">
-        <div class="md:flex">
-          <!-- left column -->
-          <div class="md:w-1/2 bg-primary text-white p-8">
-            <h2 class="text-3xl font-bold mb-6">Book Your YouTube Audit</h2>
-            <p class="mb-6">Fill out the form to schedule your 1-on-1 session. You'll receive a confirmation email and calendar invite as soon as the form lands in my inbox.</p>
-            <ul class="space-y-4">
-              <li class="flex items-center"><i class="fas fa-clock text-xl mr-3"></i>1-hour session</li>
-              <li class="flex items-center"><i class="fas fa-video text-xl mr-3"></i>Google Meet or Zoom</li>
-              <li class="flex items-center"><i class="fas fa-dollar-sign text-xl mr-3"></i>$50 AUD / €30 EUR</li>
-            </ul>
+          <div class="card">
+            <h3>Monetisation Reality</h3>
+            <p>How money actually shows up (and why it’s slower than you think).</p>
+            <a href="monetisation-reality.html">Read monetisation reality →</a>
           </div>
-          <!-- form column -->
-          <div class="md:w-1/2 p-8">
-            <form id="booking-form" class="space-y-4">
-              <div>
-                <label for="name" class="block text-gray-700 mb-2">Your Name</label>
-                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
-              </div>
-              <div>
-                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
-                <input type="email" id="email" name="_replyto" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
-              </div>
-              <div>
-                <label for="channel" class="block text-gray-700 mb-2">YouTube Channel URL</label>
-                <input type="url" id="channel" name="channel" placeholder="https://…" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
-              </div>
-              <div>
-                <label for="goals" class="block text-gray-700 mb-2">Your Main Goals</label>
-                <textarea id="goals" name="message" rows="3" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-              </div>
-              <!-- honeypot -->
-              <input type="text" name="_gotcha" style="display:none" />
-              <!-- hidden fields -->
-              <input type="hidden" name="_subject" value="New Booking – Grow Your Niche" />
-              <input type="hidden" name="_captcha" value="false" />
-              <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-bold hover:bg-red-700 transition">Book Now</button>
-            </form>
+          <div class="card">
+            <h3>Mistakes</h3>
+            <p>My wasted months, misreads, and the patterns that cost me time.</p>
+            <a href="mistakes.html">Learn from the mistakes →</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Success modal -->
-  <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-    <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
-      <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-check text-green-500 text-2xl"></i></div>
-      <h3 class="text-2xl font-bold text-secondary mb-2">Booking Confirmed!</h3>
-      <p class="text-gray-600 mb-6">Thank you for your booking. You'll receive a confirmation email shortly.</p>
-      <button onclick="closeModal()" class="bg-primary text-white px-6 py-2 rounded-md font-medium hover:bg-red-700 transition">Close</button>
-    </div>
-  </div>
-
-  <!-- ───────────────────── CHATBOT WIDGET ───────────────────── -->
-  <button id="chat-toggle" class="fixed bottom-6 right-6 bg-primary text-white p-4 rounded-full shadow-lg hover:bg-red-700 transition z-50">
-    <i class="fas fa-comment text-xl"></i>
-  </button>
-  <div id="chat-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-    <div class="bg-white rounded-lg w-full max-w-md mx-4 flex flex-col h-[400px] shadow-lg">
-      <div class="bg-primary text-white p-4 rounded-t-lg flex justify-between items-center">
-        <h3 class="font-bold text-lg">Chat with MentorBot</h3>
-        <button id="chat-close" class="text-white hover:text-accent">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div id="chat-box" class="flex-1 p-4 overflow-y-auto bg-gray-50">
-        <div class="chat-message bot-message bg-gray-200 text-gray-700 p-3 rounded-lg mb-2">
-          Hi! I'm MentorBot. Ask me about YouTube growth services or book an audit!
+    <section class="section" style="background: var(--surface);">
+      <div class="container">
+        <div class="callout">
+          <h2 class="section-title">No funnels. No popups.</h2>
+          <p>
+            I’m not here to build a funnel. If you want to talk, use the contact page. If you want research,
+            go to the resources hub. Everything else is just articles and receipts.
+          </p>
+          <a class="button ghost" href="contact.html">Contact me →</a>
         </div>
       </div>
-      <div class="p-4 border-t border-gray-200">
-        <div class="flex space-x-2">
-          <input type="text" id="chat-input" placeholder="Type your question..." class="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
-          <button id="chat-send" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-red-700 transition">
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <!-- ───────────────────── FOOTER ───────────────────── -->
-  <footer class="bg-secondary text-white py-8">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-      <div class="flex items-center space-x-2 mb-4 md:mb-0"><i class="fab fa-youtube text-primary text-2xl"></i><span class="text-xl font-bold">YouTube Growth Mentor</span></div>
-      <div class="flex space-x-6 mb-4 md:mb-0">
-        <a href="https://www.youtube.com/@growyourniche" class="hover:text-primary transition"><i class="fab fa-youtube text-xl"></i></a>
-        <a href="https://www.instagram.com/@carlstomich" class="hover:text-primary transition"><i class="fab fa-instagram text-xl"></i></a>
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <p><strong>Grow Your Niche</strong></p>
+        <p>Real YouTube growth reality. No guru language.</p>
       </div>
-      <div class="text-sm">© 2025 YouTube Growth Mentor. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.youtube.com/@growyourniche">YouTube</a>
+      </div>
+      <p>© 2025 Grow Your Niche. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- ───────────────────── JS ───────────────────── -->
-  <script>
-    // Mobile menu toggle
-    const mobileMenuButton = document.getElementById("mobile-menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
-    mobileMenuButton.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
-
-    // FAQ accordion
-    function toggleFAQ(idx) {
-      const content = document.getElementById(`faq-content-${idx}`);
-      const icon = document.getElementById(`faq-icon-${idx}`);
-      content.classList.toggle("hidden");
-      icon.classList.toggle("transform");
-      icon.classList.toggle("rotate-180");
-    }
-
-    // Formspree AJAX + modal
-    const form = document.getElementById("booking-form");
-    const successModal = document.getElementById("success-modal");
-    async function sendFormSpree(data) {
-      return fetch("https://formspree.io/f/mnnnoogg", {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-    }
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      try {
-        const res = await sendFormSpree(data);
-        if (res.ok) {
-          successModal.classList.remove("hidden");
-          form.reset();
-        } else {
-          alert("Oops — something went wrong. Please email me instead!");
-        }
-      } catch (_) {
-        alert("Network error — please try again later.");
-      }
-    });
-    function closeModal() {
-      successModal.classList.add("hidden");
-    }
-
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach((a) => {
-      a.addEventListener("click", (e) => {
-        const id = a.getAttribute("href");
-        if (id === "#") return;
-        const target = document.querySelector(id);
-        if (!target) return;
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
-        if (!mobileMenu.classList.contains("hidden")) mobileMenu.classList.add("hidden");
-      });
-    });
-
-    // Chatbot functionality (Rule-based with keyword index)
-    const chatToggle = document.getElementById("chat-toggle");
-    const chatModal = document.getElementById("chat-modal");
-    const chatClose = document.getElementById("chat-close");
-    const chatSend = document.getElementById("chat-send");
-    const chatInput = document.getElementById("chat-input");
-    const chatBox = document.getElementById("chat-box");
-
-    // Toggle chat modal
-    chatToggle.addEventListener("click", () => chatModal.classList.remove("hidden"));
-    chatClose.addEventListener("click", () => chatModal.classList.add("hidden"));
-
-    // Rule-based responses (200 responses)
-    const responses = [
-      // Greetings (20 variations)
-      { keywords: ["hi", "hello"], output: "Hey there! I’m MentorBot, here to help you grow your YouTube channel. What’s on your mind?" },
-      { keywords: ["hey"], output: "Hey hey! I’m MentorBot, your YouTube growth buddy. Want to chat about boosting your channel?" },
-      { keywords: ["sup", "what's up"], output: "Sup, creator! I’m MentorBot. Let’s talk about growing your YouTube channel—what’s up with you?" },
-      { keywords: ["what's going on"], output: "Not much, just here to help you grow on YouTube! I’m MentorBot—what’s going on with your channel?" },
-      { keywords: ["who are you"], output: "I’m MentorBot, your guide to YouTube success! I can help with channel audits, thumbnails, and more. Want to grow your channel? Book a session at #contact!" },
-      { keywords: ["how are you"], output: "I’m doing great, thanks for asking! I’m MentorBot, here to help you grow your YouTube channel. How about you—how’s your channel doing?" },
-      { keywords: ["yo"], output: "Yo, what’s up? I’m MentorBot, here to help you grow your YouTube channel. Let’s chat—how can I assist you?" },
-      { keywords: ["good morning"], output: "Good morning! I’m MentorBot, ready to help you grow your YouTube channel. What’s on your mind today?" },
-      { keywords: ["good afternoon"], output: "Good afternoon! I’m MentorBot, your YouTube growth assistant. How can I help you today?" },
-      { keywords: ["good evening"], output: "Good evening! I’m MentorBot, here to help with your YouTube channel. What’s up?" },
-      { keywords: ["hey there"], output: "Hey there! I’m MentorBot, your YouTube growth mentor. Let’s talk about your channel—what’s going on?" },
-      { keywords: ["what’s new"], output: "Not much, just here to help creators like you! I’m MentorBot—how can I help with your YouTube channel?" },
-      { keywords: ["how’s it going"], output: "It’s going great, thanks! I’m MentorBot, here to help you grow on YouTube. How’s your channel doing?" },
-      { keywords: ["hola"], output: "¡Hola! I’m MentorBot, your YouTube growth helper. Let’s get your channel growing—book a session at #contact!" },
-      { keywords: ["bonjour"], output: "Bonjour! I’m MentorBot, here to help you succeed on YouTube. What can I do for you today?" },
-      { keywords: ["ciao"], output: "Ciao! I’m MentorBot, your YouTube growth mentor. Let’s chat about your channel—book a session at #contact!" },
-      { keywords: ["hi there"], output: "Hi there! I’m MentorBot, ready to help you grow your YouTube channel. What’s on your mind?" },
-      { keywords: ["what’s good"], output: "Everything’s good here! I’m MentorBot, here to help your YouTube channel grow. What’s good with you?" },
-      { keywords: ["howdy"], output: "Howdy! I’m MentorBot, your YouTube growth partner. Let’s get your channel to the next level—book at #contact!" },
-      { keywords: ["what’s happening"], output: "Not much, just here to help you succeed on YouTube! I’m MentorBot—what’s happening with your channel?" },
-
-      // Requested phrases
-      { keywords: ["help me with youtube", "how can you help me with youtube"], output: "I can help you grow your YouTube channel with a detailed channel audit, optimized titles and thumbnails, and a tailored marketing plan. For example, if you’re a travel vlogger, I can help you craft engaging videos like ‘5 Must-Know Tips for Hanoi Travelers.’ Book a session at #contact to get started!" },
-      { keywords: ["what experience do you have", "your experience"], output: "I’ve built and monetized 4 YouTube channels in tech reviews, travel vlogs (like Hanoi and Japan), and faceless content using stock footage. I’ve also managed corporate social media and created videos on topics like moving to Japan. Let’s use my experience to grow your channel—book at #contact!" },
-      { keywords: ["are you real"], output: "I’m MentorBot, a chatbot for a real YouTube growth mentoring service run by a creator with 4 monetized channels. My creator offers actionable advice to help you grow. Want to see how I can help? Book at #contact!" },
-      { keywords: ["is this a scam"], output: "No, this isn’t a scam! I’m MentorBot, representing a legitimate mentoring service with transparent pricing at $50 AUD per hour and real testimonials—check them out in the testimonials section! Let’s grow your channel—book at #contact!" },
-
-      // Negative or challenging inputs (10 variations)
-      { keywords: ["fuck you", "screw you"], output: "I’m sorry you feel that way! I’m here to help you grow your YouTube channel with actionable advice. Let’s start fresh—how can I assist you today?" },
-      { keywords: ["you suck", "you're bad"], output: "I’m sorry if I’ve let you down! I’m MentorBot, and I’d love to help you succeed on YouTube. What’s been challenging for you? Let’s tackle it—book at #contact!" },
-      { keywords: ["you’re useless"], output: "I’m sorry you feel that way! I’m MentorBot, here to provide real YouTube growth strategies. Let’s find a solution for your channel—book at #contact!" },
-      { keywords: ["this is stupid"], output: "I’m sorry you’re not satisfied! I’m MentorBot, here to help with practical YouTube growth tips. What’s frustrating you? Let’s address it—book at #contact!" },
-      { keywords: ["you’re a scam"], output: "I assure you, I’m not a scam! I’m MentorBot, representing a real mentoring service with transparent pricing and client success stories. Check out the testimonials section, and let’s grow your channel—book at #contact!" },
-      { keywords: ["this doesn’t work"], output: "I’m sorry to hear that! I’m MentorBot, here to provide strategies that work for YouTube growth. What’s not working for you? Let’s fix it—book at #contact!" },
-      { keywords: ["you’re fake"], output: "I’m MentorBot, representing a real YouTube growth mentoring service with proven results. Check out the testimonials section to see client success stories! Ready to grow? Book at #contact!" },
-      { keywords: ["this is a joke"], output: "I’m sorry if it seems that way! I’m MentorBot, here to provide serious YouTube growth strategies. Let’s get your channel growing—book at #contact!" },
-      { keywords: ["you’re terrible"], output: "I’m sorry if I’ve let you down! I’m MentorBot, here to help you succeed on YouTube. What’s been tough for you? Let’s address it—book at #contact!" },
-      { keywords: ["you’re a fraud"], output: "I assure you, I’m not a fraud! I’m MentorBot, representing a legitimate mentoring service with real client results. See the testimonials section, and let’s grow your channel—book at #contact!" },
-
-      // Core services (15 variations)
-      { keywords: ["services", "what do you offer"], output: "I offer channel audits, title and thumbnail optimization, and tailored marketing plans to grow your YouTube channel. Ready to get started? Book at #contact!" },
-      { keywords: ["channel audit"], output: "A channel audit reviews your layout, videos, analytics, and niche clarity to provide actionable feedback. Book one at #contact for $50 AUD!" },
-      { keywords: ["how much", "price"], output: "My services are $50 AUD (€30 EUR) per hour, no upsells. Ready to start? Book a session at #contact!" },
-      { keywords: ["how long"], output: "Each session is 1 hour, packed with actionable advice for your channel. Book now at #contact!" },
-      { keywords: ["beginners"], output: "I help new creators with niche selection, branding, and avoiding mistakes. Let’s set a strong foundation—book at #contact!" },
-      { keywords: ["book"], output: "Fill out the form at #contact with your name, email, channel URL, and goals. You'll get a confirmation email!" },
-      { keywords: ["prepare"], output: "Just bring your channel link and goals! We’ll identify key areas during the session. Book at #contact!" },
-      { keywords: ["ongoing support"], output: "Yes, I offer follow-up sessions or packages at a discount. Book your first session at #contact!" },
-      { keywords: ["availability"], output: "I’m available Monday-Friday, 9 AM-5 PM AEST, with some weekend slots. Book at #contact to pick a time!" },
-      { keywords: ["bye", "goodbye"], output: "See you later! Ready to grow your channel? Book an audit at #contact anytime!" },
-      { keywords: ["help me grow"], output: "I can help with audits, thumbnails, and a marketing plan. Let’s create engaging content like ‘Hanoi Travel Tips’—book at #contact!" },
-      { keywords: ["how long to grow"], output: "Growth varies, but with my strategies, many see progress in 2-6 months. Let’s discuss your channel—book at #contact!" },
-      { keywords: ["thumbnail help"], output: "I can help you create clickable thumbnails with bold colors and emotional appeal. Book at #contact!" },
-      { keywords: ["title help"], output: "I’ll help craft titles that spark curiosity and rank better. Let’s optimize—book at #contact!" },
-      { keywords: ["marketing plan"], output: "I’ll create a tailored marketing plan to grow your audience. Book a session at #contact!" },
-
-      // About the mentor (10 variations)
-      { keywords: ["who is the mentor"], output: "I’m a creator with 4 monetized YouTube channels and a background in filmmaking. I’ve created travel vlogs in Hanoi and tech reviews. Let’s grow your channel—book at #contact!" },
-      { keywords: ["success stories"], output: "Clients have doubled views and grown 300% in months—check testimonials! Ready to be next? Book at #contact!" },
-      { keywords: ["mentor experience"], output: "I’ve grown 4 YouTube channels in tech, travel, and faceless content, plus worked in corporate social media. Let’s grow yours—book at #contact!" },
-      { keywords: ["your background"], output: "I’ve built 4 monetized channels, worked in social media, and have a filmmaking background. I’ve created content in Hanoi and Japan. Book at #contact!" },
-      { keywords: ["client results"], output: "Clients have doubled views and grown subscribers by 300%. See testimonials and let’s achieve your goals—book at #contact!" },
-      { keywords: ["mentor skills"], output: "I bring skills from growing 4 channels, filmmaking, and social media management. Book at #contact to get started!" },
-      { keywords: ["your channels"], output: "I’ve grown 4 channels in tech, travel, and faceless content, covering topics like moving to Japan. Let’s grow yours—book at #contact!" },
-      { keywords: ["mentor achievements"], output: "I’ve monetized 4 channels and helped clients double their views. Ready to help you—book at #contact!" },
-      { keywords: ["your success"], output: "I’ve grown 4 channels and helped clients achieve their goals. Check testimonials and book at #contact!" },
-      { keywords: ["mentor expertise"], output: "My expertise includes growing channels in tech, travel, and faceless content. Let’s grow your channel—book at #contact!" },
-
-      // Niches (20 variations)
-      { keywords: ["niches"], output: "I work with all niches—travel, tech, lifestyle, gaming, and more. I’ll help you find your audience. Book at #contact!" },
-      { keywords: ["travel channel"], output: "I’ve grown travel vlogs, creating content in Hanoi! I can help with storytelling and SEO, like ‘Top 10 Things to Do in Hanoi.’ Book at #contact!" },
-      { keywords: ["tech channel"], output: "Tech channels are my specialty—I’ve monetized one myself. I can help with reviews and SEO. Book at #contact!" },
-      { keywords: ["faceless channel"], output: "I’ve grown faceless channels using stock footage, like ‘Hidden History’ series. I can guide you—book at #contact!" },
-      { keywords: ["lifestyle channel"], output: "Lifestyle channels thrive on relatability. I’ll help you connect with your audience—book at #contact!" },
-      { keywords: ["education channel"], output: "Educational content needs clarity. I’ll help you make it engaging—book at #contact!" },
-      { keywords: ["gaming channel"], output: "Gaming channels need high energy. I’ll help you stand out—book at #contact!" },
-      { keywords: ["cooking channel"], output: "Cooking channels benefit from great visuals. I’ll help you grow your foodie audience—book at #contact!" },
-      { keywords: ["fitness channel"], output: "Fitness channels need actionable workouts. I can help you create engaging content—book at #contact!" },
-      { keywords: ["beauty channel"], output: "Beauty channels thrive on tutorials. I’ll help you grow with better SEO—book at #contact!" },
-      { keywords: ["music channel"], output: "Music channels can grow with covers. I’ll help you optimize—book at #contact!" },
-      { keywords: ["diy channel"], output: "DIY channels need clear tutorials. I can help you create engaging projects—book at #contact!" },
-      { keywords: ["vlog channel"], output: "Vlogs need personality. I’ll help you make them engaging—book at #contact!" },
-      { keywords: ["comedy channel"], output: "Comedy channels thrive on relatability. I’ll help you craft funny content—book at #contact!" },
-      { keywords: ["reaction channel"], output: "Reaction channels need genuine reactions. I can help you grow—book at #contact!" },
-      { keywords: ["art channel"], output: "Art channels need stunning visuals. I’ll help you showcase your work—book at #contact!" },
-      { keywords: ["travel tips"], output: "Travel tip videos, like packing hacks, are popular. I can help you create them—book at #contact!" },
-      { keywords: ["tech tutorials"], output: "Tech tutorials need clarity. I’ll help you make them engaging—book at #contact!" },
-      { keywords: ["faceless ideas"], output: "For faceless channels, try ideas like trivia using stock footage. I can help you brainstorm—book at #contact!" },
-      { keywords: ["lifestyle tips"], output: "Lifestyle tips, like routines, can engage viewers. I’ll help you create them—book at #contact!" },
-
-      // Growth metrics (15 variations)
-      { keywords: ["views"], output: "To increase views, optimize your titles, thumbnails, and SEO. A travel video titled ‘Hanoi Hidden Gems’ can attract clicks. Book at #contact!" },
-      { keywords: ["subscribers"], output: "Growing subscribers takes better CTAs and consistency. Add ‘Subscribe for more travel tips!’ to your videos. Book at #contact!" },
-      { keywords: ["click-through rate", "ctr"], output: "Improving CTR starts with clickable thumbnails and titles. Use bold colors and titles like ‘Why I Left Australia.’ Book at #contact!" },
-      { keywords: ["retention"], output: "Boost retention with better pacing and hooks. Start with a hook like ‘I almost got scammed in Hanoi!’ Book at #contact!" },
-      { keywords: ["watch time"], output: "Increase watch time with engaging content and playlists. Create a playlist of your Hanoi vlogs—book at #contact!" },
-      { keywords: ["engagement"], output: "Boost engagement by asking questions in videos. Try ‘What’s your favorite travel spot?’ Book at #contact!" },
-      { keywords: ["more views"], output: "To get more views, focus on SEO and thumbnails. A title like ‘Hanoi Street Food Secrets’ can help. Book at #contact!" },
-      { keywords: ["grow subscribers"], output: "Grow subscribers with consistent uploads and CTAs. Let’s grow your audience—book at #contact!" },
-      { keywords: ["better ctr"], output: "Better CTR comes from eye-catching thumbnails. I’ll help you design them—book at #contact!" },
-      { keywords: ["improve retention"], output: "Improve retention by keeping viewers hooked with strong pacing. Let’s work on it—book at #contact!" },
-      { keywords: ["more watch time"], output: "More watch time comes from longer viewer sessions—use playlists. I’ll help you strategize—book at #contact!" },
-      { keywords: ["increase engagement"], output: "Increase engagement with CTAs and community interaction. Let’s boost engagement—book at #contact!" },
-      { keywords: ["more likes"], output: "More likes come from engaging content—ask viewers to like your video! Book at #contact!" },
-      { keywords: ["more comments"], output: "More comments come from asking questions. Try ‘What’s your favorite tech gadget?’ Book at #contact!" },
-      { keywords: ["improve engagement"], output: "Improve engagement by creating shareable content. Let’s work on it—book at #contact!" },
-
-      // YouTube features (30 variations)
-      { keywords: ["analytics"], output: "I’ll teach you how to read YouTube analytics to make data-driven decisions. Book at #contact!" },
-      { keywords: ["seo"], output: "YouTube SEO involves keywords in titles and descriptions. Use ‘Hanoi Travel Guide’ in your title. Book at #contact!" },
-      { keywords: ["thumbnails"], output: "Thumbnails need bold colors and emotional appeal. I’ll help you design clickable ones—book at #contact!" },
-      { keywords: ["titles"], output: "Titles should spark curiosity and include keywords. Try ‘Why I Moved to Japan.’ Book at #contact!" },
-      { keywords: ["content strategy"], output: "A good strategy aligns with your niche. I’ll build one for you—book at #contact!" },
-      { keywords: ["promotion"], output: "Promotion involves cross-posting and collaborations. I’ll create a plan—book at #contact!" },
-      { keywords: ["collabs"], output: "Collaborations with similar creators can boost exposure. I’ll help you find partners—book at #contact!" },
-      { keywords: ["algorithm"], output: "The algorithm favors watch time and engagement. I’ll help you optimize—book at #contact!" },
-      { keywords: ["trending topics"], output: "I’ll help you find trending topics in your niche. Let’s plan your next video—book at #contact!" },
-      { keywords: ["video length"], output: "Video length depends on your niche—8-12 minutes often works. Let’s find what’s best—book at #contact!" },
-      { keywords: ["upload schedule"], output: "Consistency matters—1-2 videos per week is a good start. I’ll help you plan—book at #contact!" },
-      { keywords: ["playlists"], output: "Playlists increase watch time. I’ll help you set them up—book at #contact!" },
-      { keywords: ["live streams"], output: "Live streams can boost engagement. I’ll guide you on how to start—book at #contact!" },
-      { keywords: ["shorts"], output: "YouTube Shorts are great for quick growth. I’ll help you create viral ones—book at #contact!" },
-      { keywords: ["hashtags"], output: "Hashtags can help with discoverability. I’ll show you how—book at #contact!" },
-      { keywords: ["description"], output: "Descriptions should include keywords and a CTA. I’ll help you optimize—book at #contact!" },
-      { keywords: ["end screen"], output: "End screens encourage more views. I’ll help you set them up—book at #contact!" },
-      { keywords: ["cards"], output: "Cards can link to other videos during playback. I’ll show you how—book at #contact!" },
-      { keywords: ["keywords"], output: "Find keywords using YouTube search suggestions. I’ll guide you—book at #contact!" },
-      { keywords: ["competitors"], output: "Analyzing competitors helps you find gaps. I’ll show you how—book at #contact!" },
-      { keywords: ["niche down"], output: "Niche down by focusing on a specific topic. I’ll help you refine it—book at #contact!" },
-      { keywords: ["video tags"], output: "Tags help with discoverability—use relevant keywords. I’ll help—book at #contact!" },
-      { keywords: ["channel banner"], output: "Your banner should reflect your brand. I’ll help you design one—book at #contact!" },
-      { keywords: ["video intros"], output: "Intros should hook viewers—like ‘Here’s what I learned in Hanoi!’ Book at #contact!" },
-      { keywords: ["outros"], output: "Outros should include a CTA, like ‘Subscribe!’ I’ll help you craft them—book at #contact!" },
-      { keywords: ["playlists ideas"], output: "Playlist ideas, like ‘Japan Travel Series,’ boost watch time. I’ll help—book at #contact!" },
-      { keywords: ["live stream tips"], output: "Live stream tips include engaging in real-time. I’ll help you plan—book at #contact!" },
-      { keywords: ["shorts ideas"], output: "Shorts ideas, like ‘Quick Hanoi Food Guide,’ can go viral. I’ll help—book at #contact!" },
-      { keywords: ["hashtag strategy"], output: "Use hashtags like #TravelVlog to increase discoverability. I’ll help—book at #contact!" },
-      { keywords: ["description tips"], output: "Descriptions should have keywords—add timestamps for engagement. I’ll help—book at #contact!" },
-
-      // Content creation (20 variations)
-      { keywords: ["equipment"], output: "You don’t need fancy gear—a smartphone and good lighting work. I’ll advise on upgrades—book at #contact!" },
-      { keywords: ["editing"], output: "Editing should enhance pacing. I’ll share tips and tools—book at #contact!" },
-      { keywords: ["script"], output: "A good script keeps your video focused. I’ll help you structure one—book at #contact!" },
-      { keywords: ["lighting"], output: "Good lighting makes videos look professional. I’ll share affordable setups—book at #contact!" },
-      { keywords: ["audio"], output: "Clear audio is key—use a budget mic for better sound. I’ll help you improve—book at #contact!" },
-      { keywords: ["camera"], output: "Start with a smartphone camera; upgrade as you grow. I’ll recommend options—book at #contact!" },
-      { keywords: ["b-roll"], output: "B-roll adds depth to your videos. Tools like BIGVU can help you source it—book at #contact for more tips!" },
-      { keywords: ["storytelling"], output: "Storytelling keeps viewers engaged. I’ll help you craft compelling narratives—book at #contact!" },
-      { keywords: ["pacing"], output: "Good pacing avoids viewer drop-off. Keep intros short—I’ll help you optimize—book at #contact!" },
-      { keywords: ["hooks"], output: "Hooks grab attention—like ‘I got lost in Hanoi!’ I’ll help you create them—book at #contact!" },
-      { keywords: ["editing software"], output: "Use free tools like DaVinci Resolve to start editing. I’ll guide you—book at #contact!" },
-      { keywords: ["script writing"], output: "Write scripts with a clear structure—intro, body, CTA. I’ll help you—book at #contact!" },
-      { keywords: ["lighting setup"], output: "A ring light or softbox can improve your setup. I’ll share ideas—book at #contact!" },
-      { keywords: ["audio quality"], output: "Good audio matters more than video—use a lav mic. I’ll help—book at #contact!" },
-      { keywords: ["camera tips"], output: "Use your smartphone with a tripod for stability. I’ll share more tips—book at #contact!" },
-      { keywords: ["b-roll ideas"], output: "For travel vlogs, add B-roll of local culture. I’ll help you plan—book at #contact!" },
-      { keywords: ["storytelling tips"], output: "Start with a problem, then show the solution. I’ll help—book at #contact!" },
-      { keywords: ["pacing tips"], output: "Cut filler content to keep videos tight. I’ll help you improve—book at #contact!" },
-      { keywords: ["hook ideas"], output: "Try a hook like ‘Here’s what NOT to do in Japan.’ I’ll help—book at #contact!" },
-      { keywords: ["editing tips"], output: "Add transitions and music to keep viewers engaged. I’ll share tips—book at #contact!" },
-
-      // Audience engagement (15 variations)
-      { keywords: ["audience"], output: "Engage your audience with questions and CTAs. I’ll help you connect—book at #contact!" },
-      { keywords: ["branding"], output: "Consistent branding builds trust—use the same colors and logo. I’ll help—book at #contact!" },
-      { keywords: ["comments"], output: "Reply to comments to build community. I’ll share strategies—book at #contact!" },
-      { keywords: ["trolls"], output: "Ignore trolls or respond politely to maintain professionalism. I’ll help—book at #contact!" },
-      { keywords: ["community"], output: "Build a community by engaging in comments and creating polls. I’ll help—book at #contact!" },
-      { keywords: ["audience retention"], output: "Keep your audience with engaging hooks and pacing. Let’s improve—book at #contact!" },
-      { keywords: ["branding tips"], output: "Use a consistent style across videos for better branding. I’ll help—book at #contact!" },
-      { keywords: ["comment strategy"], output: "Ask open-ended questions to spark comments. I’ll help you plan—book at #contact!" },
-      { keywords: ["troll management"], output: "Don’t engage with trolls—focus on positive comments. I’ll help—book at #contact!" },
-      { keywords: ["community building"], output: "Create a community tab with polls to engage viewers. I’ll help—book at #contact!" },
-      { keywords: ["audience growth"], output: "Grow your audience with consistent content and engagement. Let’s plan—book at #contact!" },
-      { keywords: ["branding ideas"], output: "Add a custom intro with your logo for branding. I’ll help—book at #contact!" },
-      { keywords: ["comment engagement"], output: "Reply to every comment in the first hour to boost engagement. I’ll help—book at #contact!" },
-      { keywords: ["troll tips"], output: "Block repeat trolls to keep your community positive. I’ll help—book at #contact!" },
-      { keywords: ["community tips"], output: "Host a live Q&A to connect with your community. I’ll help—book at #contact!" },
-
-      // Monetization (10 variations)
-      { keywords: ["monetization"], output: "To monetize, you need 1,000 subscribers and 4,000 watch hours. I’ll help you get there—book at #contact!" },
-      { keywords: ["ads"], output: "Ad revenue comes after monetization—focus on watch time. I’ll help—book at #contact!" },
-      { keywords: ["sponsorships"], output: "Sponsorships can start early—reach out to brands in your niche. I’ll help—book at #contact!" },
-      { keywords: ["merch"], output: "Sell merch once you have a loyal audience. I’ll help you plan—book at #contact!" },
-      { keywords: ["affiliate marketing"], output: "Use affiliate links in descriptions to earn extra income. I’ll help—book at #contact!" },
-      { keywords: ["monetize faster"], output: "Monetize faster by focusing on watch time and subscriber growth. I’ll help—book at #contact!" },
-      { keywords: ["ad revenue"], output: "Increase ad revenue with longer videos and better retention. I’ll help—book at #contact!" },
-      { keywords: ["sponsorship tips"], output: "Pitch to brands with your channel stats. I’ll help you craft a pitch—book at #contact!" },
-      { keywords: ["merch ideas"], output: "Create branded tees or mugs for your audience. I’ll help—book at #contact!" },
-      { keywords: ["affiliate tips"], output: "Promote products you use in your videos for affiliate income. I’ll help—book at #contact!" },
-
-      // Creator challenges (15 variations)
-      { keywords: ["burnout"], output: "Avoid burnout by scheduling breaks and batching content. I’ll help you plan—book at #contact!" },
-      { keywords: ["low views"], output: "Low views often come from poor SEO or thumbnails. I’ll help you fix it—book at #contact!" },
-      { keywords: ["consistency"], output: "Stay consistent with a content calendar—1-2 videos per week. I’ll help—book at #contact!" },
-      { keywords: ["confidence"], output: "Build confidence by starting with simple videos. I’ll guide you—book at #contact!" },
-      { keywords: ["time management"], output: "Manage time by batching filming and editing. I’ll help you schedule—book at #contact!" },
-      { keywords: ["burnout tips"], output: "Take breaks and focus on fun content to avoid burnout. I’ll help—book at #contact!" },
-      { keywords: ["fix low views"], output: "Fix low views with better titles and thumbnails. Let’s optimize—book at #contact!" },
-      { keywords: ["stay consistent"], output: "Consistency is key—upload on a set schedule. I’ll help you plan—book at #contact!" },
-      { keywords: ["confidence tips"], output: "Gain confidence by practicing off-camera first. I’ll help—book at #contact!" },
-      { keywords: ["time management tips"], output: "Edit in batches to save time. I’ll help you manage—book at #contact!" },
-      { keywords: ["creator stress"], output: "Reduce stress by setting realistic goals. I’ll help you plan—book at #contact!" },
-      { keywords: ["low engagement"], output: "Low engagement often means your content isn’t connecting. I’ll help—book at #contact!" },
-      { keywords: ["upload schedule"], output: "A consistent schedule keeps viewers coming back. I’ll help—book at #contact!" },
-      { keywords: ["camera shy"], output: "If you’re camera-shy, start with voiceovers. I’ll help—book at #contact!" },
-      { keywords: ["content ideas"], output: "Struggling for ideas? Let’s brainstorm for your niche—book at #contact!" },
-
-      // Other platforms (5 variations)
-      { keywords: ["tiktok"], output: "Cross-promote on TikTok with short clips from your videos. I’ll help—book at #contact!" },
-      { keywords: ["instagram"], output: "Use Instagram to share behind-the-scenes content. I’ll help you plan—book at #contact!" },
-      { keywords: ["cross-promotion"], output: "Cross-promote on platforms like TikTok and Instagram. I’ll help—book at #contact!" },
-      { keywords: ["social media"], output: "Social media can boost your YouTube reach—post teasers. I’ll help—book at #contact!" },
-      { keywords: ["tiktok tips"], output: "On TikTok, use trending sounds to get more views. I’ll help—book at #contact!" },
-
-      // Logistics (15 variations)
-      { keywords: ["payment"], output: "Payment is secure via the form at #contact—just $50 AUD per session!" },
-      { keywords: ["refunds"], output: "Refunds are available if canceled 24 hours in advance. Book at #contact!" },
-      { keywords: ["scheduling"], output: "Schedule your session via the form at #contact—I’ll send a calendar invite!" },
-      { keywords: ["time zones"], output: "I’m in AEST, but I’ll work with your time zone. Book at #contact!" },
-      { keywords: ["session format"], output: "Sessions are via Google Meet or Zoom for 1 hour. Book at #contact!" },
-      { keywords: ["payment methods"], output: "Pay via card through the secure form at #contact—no hassle!" },
-      { keywords: ["refund policy"], output: "Cancel 24 hours before for a full refund. Book at #contact!" },
-      { keywords: ["scheduling issues"], output: "Facing scheduling issues? Email via the form at #contact—I’ll help!" },
-      { keywords: ["time zone help"], output: "I’ll adjust to your time zone—just note it when booking at #contact!" },
-      { keywords: ["session length"], output: "Sessions are 1 hour long, packed with advice. Book at #contact!" },
-      { keywords: ["platform"], output: "We’ll use Google Meet or Zoom—your choice. Book at #contact!" },
-      { keywords: ["payment issues"], output: "Payment issues? Contact me via the form at #contact—I’ll sort it out!" },
-      { keywords: ["reschedule"], output: "Need to reschedule? Let me know via #contact—no problem!" },
-      { keywords: ["session prep"], output: "Prep by having your channel link ready. Book at #contact!" },
-      { keywords: ["technical issues"], output: "Technical issues during a session? I’ll reschedule—book at #contact!" },
-    ];
-
-    // Build keyword index for O(1) lookups
-    const keywordIndex = {};
-    responses.forEach((response) => {
-      response.keywords.forEach((keyword) => {
-        keywordIndex[keyword.toLowerCase()] = response.output;
-      });
-    });
-
-    // Chatbot response logic
-    function getBotResponse(userInput) {
-      const input = userInput.toLowerCase().trim();
-      for (const keyword in keywordIndex) {
-        if (input.includes(keyword)) {
-          return keywordIndex[keyword];
-        }
-      }
-      return "I’m not sure I understand—can you rephrase that? I’m here to help with YouTube growth! Book a session at #contact for personalized advice.";
-    }
-
-    // Send message on button click
-    chatSend.addEventListener("click", sendMessage);
-    chatInput.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") sendMessage();
-    });
-
-    function sendMessage() {
-      const userInput = chatInput.value.trim();
-      if (!userInput) return;
-
-      // Add user message
-      const userMessage = document.createElement("div");
-      userMessage.className = "chat-message user-message bg-primary text-white p-3 rounded-lg mb-2 text-right";
-      userMessage.textContent = userInput;
-      chatBox.appendChild(userMessage);
-
-      // Add bot response
-      const botMessage = document.createElement("div");
-      botMessage.className = "chat-message bot-message bg-gray-200 text-gray-700 p-3 rounded-lg mb-2";
-      botMessage.textContent = getBotResponse(userInput);
-      chatBox.appendChild(botMessage);
-
-      // Clear input and scroll to bottom
-      chatInput.value = "";
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
-  </script>
 </body>
 </html>
