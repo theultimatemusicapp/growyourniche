@@ -1,96 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact – Grow Your Niche</title>
-  <meta name="description" content="Get in touch to collaborate, ask questions about YouTube growth, or share your channel details. Let's grow your niche together!" />
-
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Contact – Grow Your Niche" />
-  <meta property="og:description" content="Get in touch to collaborate, ask questions about YouTube growth, or share your channel details." />
+  <title>Contact | Grow Your Niche</title>
+  <meta name="description" content="Contact Grow Your Niche with questions, collaboration requests, or honest YouTube growth feedback." />
+  <meta property="og:title" content="Contact | Grow Your Niche" />
+  <meta property="og:description" content="Reach out for questions, collaboration, or honest feedback." />
   <meta property="og:image" content="logo.png" />
-  <meta property="og:url" content="https://yourdomain.com/contact.html" />
   <meta property="og:type" content="website" />
-
-  <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact – Grow Your Niche" />
-  <meta name="twitter:description" content="Get in touch to collaborate, ask questions about YouTube growth, or share your channel details." />
-  <meta name="twitter:image" content="logo.png" />
-
+  <meta name="twitter:title" content="Contact | Grow Your Niche" />
+  <meta name="twitter:description" content="Contact the creator behind Grow Your Niche." />
   <link rel="icon" href="logo.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo-link" aria-label="Grow Your Niche home">
-        <img src="logo.png" alt="Grow Your Niche logo" style="height:42px; width:auto;" />
-      </a>
-      <nav class="nav">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">Grow Your Niche</a>
+      <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="my-channels.html">My Channels</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="youtube-reality.html">YouTube Reality</a>
+        <a href="analytics-seo.html">Analytics &amp; SEO</a>
+        <a href="monetisation-reality.html">Monetisation Reality</a>
+        <a href="mistakes.html">Mistakes</a>
+        <a href="gear-tools.html">Tools I Use</a>
+        <a class="active" href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- CONTACT HERO -->
-  <section class="hero" style="padding: 2rem 0 3rem;">
-    <div class="container hero-content">
-      <h2>Contact Me</h2>
-      <p class="tagline">Ready to grow your niche? Let’s connect!</p>
-    </div>
-  </section>
-
-  <!-- CONTACT FORM SECTION -->
-  <section class="contact-section">
+  <main class="article">
     <div class="container">
-      <h2>Get In Touch</h2>
-      <p>
-        Book a $50 AUD session or ask a quick question—I’ll respond within 48 hours! Fill out the form below, or email me directly at
-        <a href="mailto:carl@music-records.com.au">carl@music-records.com.au</a>.
-      </p>
+      <div class="article-hero">
+        <p class="eyebrow">Contact</p>
+        <h1>Talk to a real human, not a funnel.</h1>
+        <p class="lede">
+          If you have a question, want to collaborate, or want honest feedback on a channel, send a message. I read
+          everything and reply when I can.
+        </p>
+      </div>
 
-      <!-- FORM: direct to Formspree endpoint -->
-      <form class="contact-form" action="https://formspree.io/f/mnnnoogg" method="POST">
-        <!-- Name -->
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required />
+      <div class="grid">
+        <div class="card">
+          <h3>What I can help with</h3>
+          <ul class="feature-list">
+            <li>Channel audits (honest, not soft)</li>
+            <li>Analytics interpretation</li>
+            <li>Strategy feedback and positioning</li>
+            <li>Collaboration ideas</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What I won’t do</h3>
+          <ul class="feature-list">
+            <li>Guarantee growth</li>
+            <li>Promise timelines I can’t control</li>
+            <li>Sell you a course you don’t need</li>
+          </ul>
+        </div>
+      </div>
 
-        <!-- Email (maps to _replyto in Formspree) -->
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="_replyto" required />
+      <section class="section" style="padding-top: 2rem;">
+        <h2 class="section-title">Send a message</h2>
+        <p class="section-subtitle">I usually reply within 48 hours.</p>
+        <form class="card" action="https://formspree.io/f/mnnnoogg" method="POST">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" required />
 
-        <!-- Channel Link -->
-        <label for="channel">Channel Link:</label>
-        <input type="url" id="channel" name="channel" placeholder="https://..." />
+          <label for="email">Email</label>
+          <input id="email" name="_replyto" type="email" required />
 
-        <!-- Message -->
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
+          <label for="channel">Channel link (optional)</label>
+          <input id="channel" name="channel" type="url" placeholder="https://" />
 
-        <!-- Honeypot (Optional) -->
-        <input type="text" name="_gotcha" style="display:none" />
+          <label for="message">What do you want to talk about?</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
 
-        <!-- Hidden Fields -->
-        <input type="hidden" name="_subject" value="New Contact Form Submission from Grow Your Niche" />
-        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html" />
-        <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_subject" value="Grow Your Niche contact" />
+          <input type="hidden" name="_captcha" value="false" />
 
-        <button type="submit" class="btn-scale">Send Message</button>
-      </form>
-      <p class="form-note">After submitting, check your email for a confirmation within 48 hours.</p>
+          <button class="button primary" type="submit">Send message</button>
+        </form>
+      </section>
     </div>
-  </section>
+  </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <p>© 2025 Grow Your Niche. All rights reserved. | <a href="https://youtube.com/@growyourniche">Watch My Tips</a></p>
+    <div class="container footer-content">
+      <div>
+        <p><strong>Grow Your Niche</strong></p>
+        <p>Honest answers, no funnels.</p>
+      </div>
+      <div class="footer-links">
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="https://www.youtube.com/@growyourniche">YouTube</a>
+      </div>
+      <p>© 2025 Grow Your Niche. All rights reserved.</p>
     </div>
   </footer>
 </body>
